@@ -22,7 +22,10 @@ class User extends Authenticatable
         'email',
         'password',
         'roles',
-        'username'
+        'username',
+        'no_wa',
+        'kode_referal',
+        'kode_referal_pengundang',
     ];
 
     /**

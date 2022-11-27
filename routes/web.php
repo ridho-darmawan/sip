@@ -14,8 +14,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('client.homepage');
+})->name('homepage');
+
+Route::get('/faq', function () {
+    return view('client.faq');
+})->name('faq');
+
+Route::get('/jenjang-karir', function () {
+    return view('client.jenjang_karir');
+})->name('jenjang-karir');
+
+Route::get('/laporan', function () {
+    return view('client.laporan');
+})->name('laporan');
+
+Route::get('/testimonial', function () {
+    return view('client.testimonial');
+})->name('testimonial');
+
+Route::get('/reload-captcha', [App\Http\Controllers\Auth\RegisterController::class, 'reloadCaptcha']);
+
+
 
 Auth::routes();
 
