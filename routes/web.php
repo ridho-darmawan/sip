@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +20,9 @@ Route::get('/', function () {
     return view('client.homepage');
 })->name('homepage');
 
-Route::get('/faq', function () {
+Route::get('/faq-home', function () {
     return view('client.faq');
-})->name('faq');
+})->name('faq.homepage');
 
 Route::get('/jenjang-karir', function () {
     return view('client.jenjang_karir');
@@ -33,10 +36,14 @@ Route::get('/testimonial', function () {
     return view('client.testimonial');
 })->name('testimonial');
 
-Route::get('/reload-captcha', [App\Http\Controllers\Auth\RegisterController::class, 'reloadCaptcha']);
+Route::get('/reload-captcha', [RegisterController::class, 'reloadCaptcha']);
 
-
+Route::middleware(['auth'])->group(function () {
+    Route::middleware(['admin'])->group(function () {
+        Route::resource('faq', FaqController::class);
+        Route::get('/home', [HomeController::class, 'index'])->name('home');
+    });
+});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

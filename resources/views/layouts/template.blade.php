@@ -66,7 +66,7 @@ https://templatemo.com/tm-541-host-cloud
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ request()->is('faq') ? 'active' : '' }}" href="{{route('faq')}}">FAQ</a>
+                <a class="nav-link {{ request()->is('faq-home') ? 'active' : '' }}" href="{{route('faq.homepage')}}">FAQ</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link {{ request()->is('jenjang-karir') ? 'active' : '' }}" href="{{route('jenjang-karir')}}">Jenjang Karir</a>
