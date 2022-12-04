@@ -4,13 +4,30 @@
 
   <head>
 
+<<<<<<< HEAD
+=======
+    <style>
+         .avatar {
+  width: 110px;
+  /* margin-top: -60px; */
+  overflow: hidden;
+  border: 3px solid #fff;
+  border-radius: 50%;
+}
+    </style>
+
+>>>>>>> 25629597844639583b75a6878918d7d22a80265b
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="TemplateMo">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
+<<<<<<< HEAD
     <title>Host Cloud - Free HTML5 Bootstrap Template</title>
+=======
+    <title>Suistanable Income Project</title>
+>>>>>>> 25629597844639583b75a6878918d7d22a80265b
 
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('template/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -44,18 +61,28 @@ https://templatemo.com/tm-541-host-cloud
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
+<<<<<<< HEAD
           <a class="navbar-brand" href="index.html"><h2>Host <em>Cloud</em></h2></a>
+=======
+          <a class="navbar-brand" href="{{route('homepage')}}"><h2>SIP</h2></a>
+>>>>>>> 25629597844639583b75a6878918d7d22a80265b
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
+<<<<<<< HEAD
               <li class="nav-item active">
                 <a class="nav-link" href="index.html">Beranda
+=======
+              <li class="nav-item">
+                <a class="nav-link {{ request()->is('beranda') ? 'active' : '' }}" href="{{route('beranda-homepage')}}">Beranda
+>>>>>>> 25629597844639583b75a6878918d7d22a80265b
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
+<<<<<<< HEAD
                 <a class="nav-link" href="about.html">FAQ</a>
               </li>
               <li class="nav-item">
@@ -63,13 +90,30 @@ https://templatemo.com/tm-541-host-cloud
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contact.html">Laporan</a>
+=======
+                <a class="nav-link {{ request()->is('beranda/faq') ? 'active' : '' }}" href="{{route('faq-homepage')}}">FAQ</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{ request()->is('beranda/jenjang-karir') ? 'active' : '' }}" href="{{route('jenjang-karir-homepage')}}">Jenjang Karir</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{ request()->is('beranda/laporan') ? 'active' : '' }}" href="{{route('laporan-homepage')}}">Laporan</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{ request()->is('beranda/testimonial') ? 'active' : '' }}" href="{{route('testimonial-homepage')}}">Testimonial</a>
+>>>>>>> 25629597844639583b75a6878918d7d22a80265b
               </li>
             </ul>
           </div>
           <div class="functional-buttons">
             <ul>
+<<<<<<< HEAD
               <li><a href="#">Masuk</a></li>
               <li><a href="#">Daftar</a></li>
+=======
+              <li><a href="{{route('login')}}">Masuk</a></li>
+              <li><a href="{{route('register')}}">Daftar</a></li>
+>>>>>>> 25629597844639583b75a6878918d7d22a80265b
             </ul>
           </div>
         </div>
@@ -77,6 +121,7 @@ https://templatemo.com/tm-541-host-cloud
     </header>
 
     <!-- Page Content -->
+<<<<<<< HEAD
     <!-- Banner Starts Here -->
     <div class="banner">
       <div class="container">
@@ -376,6 +421,11 @@ https://templatemo.com/tm-541-host-cloud
       </div>
     </div>
     <!-- Testimonials Ends Here -->
+=======
+
+    @yield('content')
+
+>>>>>>> 25629597844639583b75a6878918d7d22a80265b
 
 
     <!-- Footer Starts Here -->
