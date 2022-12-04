@@ -46,7 +46,13 @@
                     <td>{{$no++}}</td>
                     <td>{{$faq->pertanyaan}} </td>
                     <td>{{$faq->jawaban}}</td>
-                    <td>edit|delete|update</td>
+                    <td>
+                        <a href="#ubahFaq{{ $faq->id }}" data-toggle="modal"  data-keyboard="false" data-backdrop="static" class="badge badge-warning">Ubah</a>
+                            @include('admin.faq.modalUbah') |
+
+                            <a href="#hapusFaq{{ $faq->id }}" data-toggle="modal" data-keyboard="false" data-backdrop="static" class="badge badge-danger">Hapus</a>
+                            @include('admin.faq.modalHapus')
+                    </td>
                   </tr>
                 @empty
                 <tr>

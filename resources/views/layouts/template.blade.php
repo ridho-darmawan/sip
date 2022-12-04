@@ -61,21 +61,21 @@ https://templatemo.com/tm-541-host-cloud
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="{{route('homepage')}}">Beranda
+                <a class="nav-link {{ request()->is('beranda') ? 'active' : '' }}" href="{{route('beranda-homepage')}}">Beranda
                   <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ request()->is('faq-home') ? 'active' : '' }}" href="{{route('faq.homepage')}}">FAQ</a>
+                <a class="nav-link {{ request()->is('beranda/faq') ? 'active' : '' }}" href="{{route('faq-homepage')}}">FAQ</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ request()->is('jenjang-karir') ? 'active' : '' }}" href="{{route('jenjang-karir')}}">Jenjang Karir</a>
+                <a class="nav-link {{ request()->is('beranda/jenjang-karir') ? 'active' : '' }}" href="{{route('jenjang-karir-homepage')}}">Jenjang Karir</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ request()->is('laporan') ? 'active' : '' }}" href="{{route('laporan')}}">Laporan</a>
+                <a class="nav-link {{ request()->is('beranda/laporan') ? 'active' : '' }}" href="{{route('laporan-homepage')}}">Laporan</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ request()->is('testimonial') ? 'active' : '' }}" href="{{route('testimonial')}}">Testimonial</a>
+                <a class="nav-link {{ request()->is('beranda/testimonial') ? 'active' : '' }}" href="{{route('testimonial-homepage')}}">Testimonial</a>
               </li>
             </ul>
           </div>

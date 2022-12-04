@@ -36,26 +36,34 @@
         <div class="row">
             <div class="col">
                 <div id="accordion">
-                    <div class="card">
-                        <div class="card-header" id="headingOne">
-                            <h6>
-                                {{-- asdasd --}}
-                                <button class="btn btn-link float-left" style="color:black; text-decoration:none" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    Apa Itu Suistanable Income Project?
-                                </button>
-                                <button class="btn btn-link float-right" ><i class="tn btn-link fa fa-angle-down " data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="text-decoration:none"></i>
-                                    {{-- Collapsible Group Item #1 --}}
-                                </button>
-                            </h6>
 
-                        </div>
+                    @forelse ($faqs as $faq)
+                        <div class="card mb-3">
+                            <div class="card-header" style="background-color: #8566c7;" id="headingOne">
+                                <h6>
+                                    {{-- asdasd --}}
+                                    <button class="btn btn-link float-left" style="color:white; text-decoration:none" data-toggle="collapse"  href="#collapse{{ $faq->id }}" aria-expanded="false" aria-controls="collapseOne">
+                                        {{ucwords($faq->pertanyaan)}}
+                                    </button>
+                                    <button class="btn btn-link float-right" ><i class="tn btn-link fa fa-angle-down " data-toggle="collapse"  href="#collapse{{ $faq->id }}"aria-expanded="false" aria-controls="collapseOne" style="text-decoration:none; color:white"></i>
+                                        {{-- Collapsible Group Item #1 --}}
+                                    </button>
+                                </h6>
 
-                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                            <div class="card-body">
-                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+
+                            <div id="collapse{{ $faq->id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                                <div class="card-body">
+                                    {{$faq->jawaban}}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @empty
+                        <h5 class="text-center">Data FAQ Belum Tersedia</h5>
+                    @endforelse
+
+
+
 
                 </div>
             </div>

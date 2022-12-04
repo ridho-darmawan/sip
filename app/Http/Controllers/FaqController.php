@@ -50,9 +50,10 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(FaqRequest $request, Faq $faq)
     {
-        //
+        $faq->update($request->all());
+        return redirect()->route('faq.index');
     }
 
     /**
@@ -61,8 +62,9 @@ class FaqController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Faq $faq)
     {
-        //
+        $faq->delete();
+        return redirect()->route('faq.index');
     }
 }
