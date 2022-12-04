@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
+use App\Models\About;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,7 +30,8 @@ class HomeController extends Controller
 
     public function beranda()
     {
-        return view('client.homepage');
+        $about = About::first();
+        return view('client.homepage', compact('about'));
     }
 
     public function faq()

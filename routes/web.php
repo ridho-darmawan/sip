@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TentangController;
 use App\Http\Controllers\Auth\RegisterController;
 
 /*
@@ -51,6 +52,7 @@ Route::prefix('beranda')->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::middleware(['admin'])->group(function () {
         Route::resource('faq', FaqController::class)->only(['index','update','destroy','store']);
+        Route::resource('about', TentangController::class);
         Route::get('/home', [HomeController::class, 'index'])->name('home');
     });
 });
